@@ -11,8 +11,11 @@ public class StringCalculator {
 			for(int i=0; i<x; i++)
 			{
 				int y = 0;
-				y = Integer.parseInt(arr[i]);
-				sm += y;
+				if(arr[i].charAt(0) >= 'a' && arr[i].charAt(0) <= 'z') sm += arr[i].charAt(0) - 'a' + 1;
+				else {
+					y = Integer.parseInt(arr[i]);
+					sm += y;
+				}
 			}
 			return sm;
 		}
