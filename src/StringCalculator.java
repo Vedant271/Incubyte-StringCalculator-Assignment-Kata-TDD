@@ -16,6 +16,7 @@ public class StringCalculator {
 					try
 					{
 						y = Integer.parseInt(arr[i]);
+						if(y >= 1000) continue;
 						if(y < 0) throw new ArithmeticException("Negative not allowed " + y);
 						sm += y;
 					}finally {}
