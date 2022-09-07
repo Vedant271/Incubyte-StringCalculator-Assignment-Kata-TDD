@@ -13,8 +13,12 @@ public class StringCalculator {
 				int y = 0;
 				if(arr[i].charAt(0) >= 'a' && arr[i].charAt(0) <= 'z') sm += arr[i].charAt(0) - 'a' + 1;
 				else {
-					y = Integer.parseInt(arr[i]);
-					sm += y;
+					try
+					{
+						y = Integer.parseInt(arr[i]);
+						if(y < 0) throw new ArithmeticException("Negative not allowed " + y);
+						sm += y;
+					}finally {}
 				}
 			}
 			return sm;

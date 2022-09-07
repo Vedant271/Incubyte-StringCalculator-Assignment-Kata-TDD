@@ -24,4 +24,9 @@ public class StringCalculatorTests {
 		Assert.assertEquals(StringCalculator.add("1,2,a,c"),7);
 	}
 	
+	@Test
+	void negatives() {
+		Assert.assertThrows("Negative not allowed -1",ArithmeticException.class, ()->StringCalculator.add("-1"));
+	}
+	
 }
