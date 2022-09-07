@@ -14,4 +14,9 @@ public class StringCalculatorTests {
 		Assert.assertEquals(StringCalculator.add("1"),1);
 	}
 	
+	@Test
+	void multiple_integer_in_string() {
+		Assert.assertEquals(StringCalculator.add("1,3"),4);
+	}
+	
 }
