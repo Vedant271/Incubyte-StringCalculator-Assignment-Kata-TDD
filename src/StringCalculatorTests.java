@@ -29,4 +29,9 @@ public class StringCalculatorTests {
 		Assert.assertThrows("Negative not allowed -1",ArithmeticException.class, ()->StringCalculator.add("-1"));
 	}
 	
+	@Test
+	void multiple_negatives() {
+		Assert.assertThrows("Negative not allowed -12",ArithmeticException.class, ()->StringCalculator.add("1000,-12, a, b"));
+	}
+	
 }
