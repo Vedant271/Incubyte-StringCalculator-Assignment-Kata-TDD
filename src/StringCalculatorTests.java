@@ -9,4 +9,9 @@ public class StringCalculatorTests {
 		Assert.assertEquals(StringCalculator.add(""),0);
 	}
 	
+	@Test
+	void single_integer() {
+		Assert.assertEquals(StringCalculator.add("1"),1);
+	}
+	
 }
