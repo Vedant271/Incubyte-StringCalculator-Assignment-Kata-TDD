@@ -28,11 +28,6 @@ public class StringCalculator {
 		}
 		return 0;
 	}
-	public static void main(String args[])
-	{
-		StringCalculator a = new StringCalculator();
-		System.out.println(a.add("1000,-2, -12, a, -4, b"));
-	}
 }
 
 
