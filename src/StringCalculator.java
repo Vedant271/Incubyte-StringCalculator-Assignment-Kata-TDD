@@ -2,10 +2,21 @@ import java.util.*;
 
 public class StringCalculator {
 
-	public static int add(String str)  {
+	public static int add(String ip_str) {
+	    String delimiter = ",|\n";
+	    String str = ip_str;
+	    if (ip_str.startsWith("//")) {
+	        int delimiterIdx = ip_str.indexOf("//") + 2;
+	        delimiter = ip_str.substring(delimiterIdx, delimiterIdx + 1);
+	        str = ip_str.substring(ip_str.indexOf("\n") + 1);
+	    }
+	    return add(str, delimiter);
+	}
+	
+	public static int add(String str, String delimiter)  {
 		if(!str.isEmpty()) {
 			List Negatives = new ArrayList();
-			String arr[] = str.split(",|\n");
+			String arr[] = str.split(delimiter);
 			int x = arr.length;
 			for(int i=0; i<x; i++) arr[i] = arr[i].strip();
 			int sm = 0;

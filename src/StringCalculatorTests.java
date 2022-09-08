@@ -44,4 +44,8 @@ public class StringCalculatorTests {
 		Assert.assertEquals(StringCalculator.add("1\n2,3"),6);
 	}
 	
+	@Test
+	void support_different_delimiters() {
+		Assert.assertEquals(StringCalculator.add("//;\n1;2"),3);
+	}
 }
