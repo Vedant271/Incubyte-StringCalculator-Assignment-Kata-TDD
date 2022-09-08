@@ -39,4 +39,9 @@ public class StringCalculatorTests {
 		Assert.assertEquals(StringCalculator.add("1001,1,3"),4);
 	}
 	
+	@Test
+	void new_lines_between_numbers() {
+		Assert.assertEquals(StringCalculator.add("1\n2,3"),6);
+	}
+	
 }

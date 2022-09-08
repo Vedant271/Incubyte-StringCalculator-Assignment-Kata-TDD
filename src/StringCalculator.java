@@ -4,7 +4,8 @@ public class StringCalculator {
 
 	public static int add(String str)  {
 		if(!str.isEmpty()) {
-			String arr[] = str.split(",");
+			List Negatives = new ArrayList();
+			String arr[] = str.split(",|\n");
 			int x = arr.length;
 			for(int i=0; i<x; i++) arr[i] = arr[i].strip();
 			int sm = 0;
@@ -28,3 +29,5 @@ public class StringCalculator {
 	}
 	
 }
+
+
