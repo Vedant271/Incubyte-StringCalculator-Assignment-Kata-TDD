@@ -1,8 +1,15 @@
 import java.util.*;
 
 public class StringCalculator {
+	
 
+	
 	public static int add(String ip_str) {
+		
+	
+		if((ip_str==null) || (ip_str.isEmpty())) {
+			return 0;
+		}
 	    String delimiter = ",|\n";
 	    String str = ip_str;
 	    if (ip_str.startsWith("//")) {
@@ -32,12 +39,27 @@ public class StringCalculator {
 					
 				}
 			}
+			String neg_nos = "";
+			for(int i=0;i<Negatives.size();i++) {
+				int e = (int) Negatives.get(i);
+				if(i==Negatives.size()-1) {
+					neg_nos = neg_nos + e;
+					break;
+				}
+				neg_nos = neg_nos + e + ",";
+			}
+			
 			if (Negatives.size() > 0) {
-		        throw new RuntimeException("Negatives not allowed: " + Negatives.toString());
+		        throw new RuntimeException("Negatives not allowed: " + neg_nos);
 		    }
 			return sm;
 		}
 		return 0;
+		
+	}
+	
+	public static void main(String args[]) {
+		System.out.println(add("1000,-2, -12, a, -4, b"));
 	}
 }
 
